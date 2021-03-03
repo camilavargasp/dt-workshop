@@ -1,7 +1,8 @@
 ---
 title: "Eco-data-science data.table workshop"
 output: html_notebook
-
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ### shortcuts

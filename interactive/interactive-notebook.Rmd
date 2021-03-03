@@ -1,7 +1,8 @@
 ---
 title: "Eco-data-science data.table workshop"
 output: html_notebook
-
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ### shortcuts
@@ -437,6 +438,8 @@ dt[, no_rows := 1:.N, by = .(orispl_code, unitid)]
 head(dt)
 ```
 What if we want to compute a new column that calculates the difference in CO2 emissions from the previous hour for every generator?
+"lag" substract the row above
+"lead" substrats the row that follows
 ```{r}
 dt[, diff_co2 := co2_mass_tons - shift(co2_mass_tons, type = "lag"), by = .(orispl_code, unitid)]
 tail(dt)
